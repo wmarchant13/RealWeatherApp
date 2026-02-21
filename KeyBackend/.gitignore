@@ -1,0 +1,11 @@
+# Ignore any local secret files for this backend (defensive)
+*.key
+*.secrets.json
+
+# Visual Studio / Rider
+*.user
+.vs/
+
+# build outputs
+bin/
+obj/
