@@ -22,22 +22,33 @@
 
             <VerticalStackLayout Spacing="20">
 
-                <!-- Button to get weather -->
-                <Button Text="Get Buffalo Weather"
-                        Clicked="OnGetWeatherClicked"
-                        BackgroundColor="#007ACC"
-                        TextColor="White"
-                        FontAttributes="Bold"
-                        CornerRadius="8"
-                        HeightRequest="50"/>
+                <!-- City search + Button to get weather -->
+                <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Frame Padding="4" CornerRadius="6" BorderColor="#CCCCCC" BackgroundColor="White" HasShadow="False">
+                        <Entry x:Name="CityEntry" Placeholder="Enter city (e.g. Buffalo,US)" WidthRequest="260" BackgroundColor="Transparent" TextColor="Black" />
+                    </Frame>
+                    <Button x:Name="SearchButton" Text="Search" Clicked="OnGetWeatherClicked" BackgroundColor="#007ACC" TextColor="White" CornerRadius="8" />
+                </HorizontalStackLayout>
+                <Button Text="Use My Location" Clicked="OnUseLocationClicked" BackgroundColor="#007ACC" TextColor="White" FontAttributes="Bold" CornerRadius="8" HeightRequest="50"/>
 
                 <!-- Weather display -->
-                <Label x:Name="WeatherLabel"
-                       Text="Weather info will appear here"
-                       FontSize="18"
-                       TextColor="#333333"
-                       LineBreakMode="WordWrap"
-                       HorizontalTextAlignment="Center"/>
+                <VerticalStackLayout Spacing="8">
+                    <Label x:Name="LocationLabel" Text="Buffalo, NY" FontSize="20" FontAttributes="Bold" HorizontalOptions="Center" TextColor="#333333" />
+                    <Label x:Name="TempLabel" Text="Temperature: --" FontSize="18" TextColor="#333333" HorizontalTextAlignment="Center" />
+                    <Label x:Name="DewPointLabel" Text="Dew Point: --" FontSize="16" TextColor="#555555" HorizontalTextAlignment="Center" />
+                    <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                        <Label x:Name="WindIconLabel" Text="↑" FontSize="20" TextColor="#007ACC" VerticalTextAlignment="Center" />
+                        <Label x:Name="WindLabel" Text="Wind: --" FontSize="16" TextColor="#555555" HorizontalTextAlignment="Center" />
+                    </HorizontalStackLayout>
+                    <Label x:Name="ConditionLabel" Text="Condition: --" FontSize="16" TextColor="#333333" HorizontalTextAlignment="Center" />
+
+                    <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                        <Label x:Name="SunriseLabel" Text="Sunrise: --" FontSize="14" TextColor="#777777" />
+                        <Label x:Name="SunsetLabel" Text="Sunset: --" FontSize="14" TextColor="#777777" />
+                    </HorizontalStackLayout>
+
+                    <Label x:Name="CurrentTimeLabel" Text="Now: --" FontSize="14" TextColor="#777777" HorizontalTextAlignment="Center" />
+                </VerticalStackLayout>
             </VerticalStackLayout>
         </Frame>
     </VerticalStackLayout>

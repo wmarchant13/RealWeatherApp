@@ -1,0 +1,15 @@
+### Local secret/config files (ignore API keys)
+# appsettings development file that contains API key
+Properties/appsettings.development.json
+
+# backend seed key file
+KeyBackend/.openweather.key
+
+# common local secrets
+*.key
+*.secrets.json
+
+# Ignore build outputs
+bin/
+obj/
+
