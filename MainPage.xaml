@@ -8,18 +8,21 @@
     <VerticalStackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
         
         <!-- App Title -->
-        <Label Text="🌤 RealWeatherApp"
+        <Label Text="RealWeatherApp"
                FontSize="32"
                HorizontalOptions="Center"
                TextColor="#333333"/>
+               
 
         <!-- Weather Frame -->
-        <Frame BackgroundColor="White"
+        <Frame x:Name="InfoFrame" BackgroundColor="White"
                CornerRadius="15"
                HasShadow="True"
                Padding="20"
                WidthRequest="400">
 
+            <Grid>
+            <!-- content layer -->
             <VerticalStackLayout Spacing="20">
 
                 <!-- City search + Button to get weather -->
@@ -29,7 +32,9 @@
                     </Frame>
                     <Button x:Name="SearchButton" Text="Search" Clicked="OnGetWeatherClicked" BackgroundColor="#007ACC" TextColor="White" CornerRadius="8" />
                 </HorizontalStackLayout>
-                <Button Text="Use My Location" Clicked="OnUseLocationClicked" BackgroundColor="#007ACC" TextColor="White" FontAttributes="Bold" CornerRadius="8" HeightRequest="50"/>
+                <HorizontalStackLayout Spacing="8" HorizontalOptions="Center">
+                    <Button Text="Use My Location" Clicked="OnUseLocationClicked" BackgroundColor="#007ACC" TextColor="White" FontAttributes="Bold" CornerRadius="8" HeightRequest="50" />
+                </HorizontalStackLayout>
 
                 <!-- Weather display -->
                 <VerticalStackLayout Spacing="8">
@@ -49,7 +54,17 @@
 
                     <Label x:Name="CurrentTimeLabel" Text="Now: --" FontSize="14" TextColor="#777777" HorizontalTextAlignment="Center" />
                 </VerticalStackLayout>
-            </VerticalStackLayout>
-        </Frame>
+                </VerticalStackLayout>
+
+                <!-- overlay layer removed -->
+            </Grid>
+         </Frame>
+
+         <Label Text="By: Will Marchant"
+             FontSize="12"
+             TextColor="#666666"
+             HorizontalOptions="End"
+             Opacity="0.75"
+             Margin="0,8,8,0" />
     </VerticalStackLayout>
 </ContentPage>

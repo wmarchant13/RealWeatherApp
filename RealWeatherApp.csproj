@@ -82,9 +82,6 @@
 		</None>
 	</ItemGroup>
 
-	<ItemGroup>
-		<!-- only the development settings file exists in the repo -->
-		<MauiAsset Include="Properties\appsettings.development.json" />
-	</ItemGroup>
+	<!-- development settings are copied via the None Update entries above -->
 
 </Project>

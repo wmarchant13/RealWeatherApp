@@ -2,7 +2,8 @@ using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 // bind to a known localhost port for the MAUI app to call (local development)
-builder.WebHost.UseUrls("http://localhost:5000");
+// prefer 5001 in case 5000 is used by system services on macOS
+builder.WebHost.UseUrls("http://localhost:5001");
 
 builder.Services.AddCors(options => options.AddPolicy("Default", p => p.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod()));
 
