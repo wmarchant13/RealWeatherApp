@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="RealWeatherApp.MainPage"
+             BackgroundColor="#F0F0F0"
+             Padding="40">
+
+    <VerticalStackLayout Spacing="25" HorizontalOptions="Center" VerticalOptions="Center">
+        
+        <!-- App Title -->
+        <Label Text="🌤 RealWeatherApp"
+               FontSize="32"
+               HorizontalOptions="Center"
+               TextColor="#333333"/>
+
+        <!-- Weather Frame -->
+        <Frame BackgroundColor="White"
+               CornerRadius="15"
+               HasShadow="True"
+               Padding="20"
+               WidthRequest="400">
+
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Button to get weather -->
+                <Button Text="Get Buffalo Weather"
+                        Clicked="OnGetWeatherClicked"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        CornerRadius="8"
+                        HeightRequest="50"/>
+
+                <!-- Weather display -->
+                <Label x:Name="WeatherLabel"
+                       Text="Weather info will appear here"
+                       FontSize="18"
+                       TextColor="#333333"
+                       LineBreakMode="WordWrap"
+                       HorizontalTextAlignment="Center"/>
+            </VerticalStackLayout>
+        </Frame>
+    </VerticalStackLayout>
+</ContentPage>
